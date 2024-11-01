@@ -5,19 +5,63 @@ html * {
 body {
     padding: 0;
     margin: 0;
+    overflow: hidden;
+    background-color: var(--dark);
 }
 
+:root {
+    --red: #F05454;
+    --blue: #30475E;
+    --dark: #222831;
+    --light: #E8E8E8;
+}
+
+h1 {
+    font-size:  3rem;
+    text-align: center;
+    color: var(--red);
+}
+
+section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    width: 70%;
+    height: 90%;
+}
 
 #container {
     display: flex;
     flex-wrap: wrap;
     height: 800px;
     width: 800px;
-    margin: 50px auto;
+    margin: 0 50px;
+    background-color: var(--light);
 }
 
 .square {
     width: 50px;
     height: 50px;
+    border: 1px solid #d7d7d7;
+}
+
+#menu {
+    display: flex;
+    width: 300px;
+    height: 600px;
+    margin: auto 30px;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+#clear-btn {
+    width: 100px;
+    height: 50px;
+    margin: 0 auto;
+    padding: 5px;
     border: 1px solid black;
+    font-size: 16px;
+    cursor: pointer;
 }
