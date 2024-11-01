@@ -12,10 +12,24 @@
     <section>
       <div id="menu">
         <button id="clear-btn">Clear</button>
+        <div class="center">
+              <label class='radio-label'>
+                  <input name='pixel' type='radio' id='small' value="16" checked>
+                  <span class='inner-label'>16 x 16</span>
+              </label>
+              <label class='radio-label'>
+                  <input name='pixel' type='radio' value="64" id='medium'>
+                  <span class='inner-label'>64 x 64</span>
+              </label>
+              <label class='radio-label'>
+                  <input name='pixel' type='radio' value="100" id='large'>
+                  <span class='inner-label'>100 x 100</span>
+              </label>
+        </div>
       </div>
+
       <div id="container"></div>
     </section>
     <script src="javascript.js"></script>
   </body>
-
 </html>

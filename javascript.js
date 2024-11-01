@@ -11,22 +11,17 @@ function createGrid() {
     fillGrid(square);
 }}
 
-function fillGrid(e) {
-    e.addEventListener("click", () => {
-        e.style.backgroundColor = "black";
-        e.style.border = "0";
+function fillGrid(square) {
+    square.addEventListener("click", () => {
+        square.style.backgroundColor = "black";
+        square.style.border = "0";
     })
 }
 
 function clearGrid() {
-    const squares = document.querySelectorAll(".square");
-    squares.forEach((square) => {
-        square.removeAttribute("style");
-    })
+    document.querySelectorAll(".square").forEach(square => square.style = "");
 }
 
-clearBtn.addEventListener("click", () => {
-    clearGrid();
-})
+clearBtn.addEventListener("click", clearGrid);
 
 createGrid();
