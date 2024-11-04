@@ -107,14 +107,9 @@ button:hover::after {
 }
 
 input[type=range] {
-    -webkit-appearance: hidden;
     writing-mode: vertical-lr;
     direction: rtl;
     width: 70px;
-}
-
-input[type=range]::-webkit-slider-thumb {
-    -webkit-appearance: hidden;
 }
 
 #sizes {
