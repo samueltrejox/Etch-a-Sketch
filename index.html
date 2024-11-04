@@ -12,19 +12,21 @@
     <section>
       <div id="menu">
         <button id="clear-btn">Clear</button>
-        <div class="center">
-              <label class='radio-label'>
-                  <input name='pixel' type='radio' id='small' value="16" checked>
-                  <span class='inner-label'>16 x 16</span>
-              </label>
-              <label class='radio-label'>
-                  <input name='pixel' type='radio' value="64" id='medium'>
-                  <span class='inner-label'>64 x 64</span>
-              </label>
-              <label class='radio-label'>
-                  <input name='pixel' type='radio' value="100" id='large'>
-                  <span class='inner-label'>100 x 100</span>
-              </label>
+        <button id="toggle-btn">Toggle Grid</button>
+        <div id="range-container">
+        <input
+          type="range"
+          value="1"
+          min="1"
+          max="3"
+          list="sizes"
+          id="grid-size"
+        />
+        <datalist id="sizes">
+          <option value="3" label="100x100"></option>
+          <option value="2" label="64x64"></option>
+          <option value="1" label="16x16"></option>
+        </datalist>
         </div>
       </div>
 
