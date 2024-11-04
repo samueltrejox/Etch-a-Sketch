@@ -19,7 +19,6 @@ function createGrid() {
     for (let i = 0; i < totalSquares; i++) {
     const square = document.createElement("div");
     square.className = "pixel";
-    square.className = "pixel-border";
     square.className = "grid-border";
     
 
@@ -37,7 +36,6 @@ function createGrid() {
 function fillGrid(square) {
   square.addEventListener("click", () => {
     square.classList.remove("grid-border");
-    square.classList.add("pixel-border");
     square.classList.add("pixel");
   });
 }
@@ -46,7 +44,6 @@ function fillGrid(square) {
 function clearGrid (square) {
     clearBtn.addEventListener("click", () => {
         square.classList.remove("pixel");
-        square.classList.remove("pixel-border");
         square.classList.add("grid-border");
 })}
 

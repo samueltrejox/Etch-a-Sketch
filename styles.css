@@ -45,12 +45,6 @@ section {
     cursor: pointer;
 }
 
-.pixel-border {
-    border-top: 1px solid #000;
-    border-left: 1px solid #000;
-    cursor: pointer;
-}
-
 .pixel {
     background-color: #000;
     cursor: pointer;
