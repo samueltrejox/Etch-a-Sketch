@@ -42,15 +42,18 @@ section {
 .grid-border {
     border-top: 1px solid #d6d6d6;
     border-left: 1px solid #d6d6d6;
+    cursor: pointer;
 }
 
 .pixel-border {
     border-top: 1px solid #000;
     border-left: 1px solid #000;
+    cursor: pointer;
 }
 
 .pixel {
     background-color: #000;
+    cursor: pointer;
 }
 
 #menu {
@@ -110,6 +113,7 @@ input[type=range] {
     writing-mode: vertical-lr;
     direction: rtl;
     width: 70px;
+    cursor: pointer;
 }
 
 #sizes {
