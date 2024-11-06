@@ -11,22 +11,25 @@
     <h1>Etch-a-Sketch</h1>
     <section>
       <div id="menu">
-        <button id="clear-btn">Clear</button>
+        <button id="retro-btn">Retro Mode</button>
+        <button id="shadown-btn">Shadow Mode</button>
+        <button id="random-btn">Random Mode</button>
+        <button class="clear" id="clear-btn">Clear</button>
         <button id="toggle-btn">Toggle Grid</button>
         <div id="range-container">
-        <input
-          type="range"
-          value="1"
-          min="1"
-          max="3"
-          list="sizes"
-          id="grid-size"
-        />
-        <datalist id="sizes">
-          <option value="3" label="100x100"></option>
-          <option value="2" label="64x64"></option>
-          <option value="1" label="16x16"></option>
-        </datalist>
+          <input
+            type="range"
+            value="1"
+            min="1"
+            max="3"
+            list="sizes"
+            id="grid-size"
+          />
+          <datalist id="sizes">
+            <option value="3" label="64x64"></option>
+            <option value="2" label="32x32"></option>
+            <option value="1" label="16x16"></option>
+          </datalist>
         </div>
       </div>
 
