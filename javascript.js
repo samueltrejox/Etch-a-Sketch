@@ -58,8 +58,12 @@ function clearGrid() {
   const squares = container.querySelectorAll(".pixel");
   squares.forEach(square => {
     square.classList.remove("pixel");
-    square.classList.add("grid-border");
-    square.style.backgroundColor = ""; // Reset color
+    if(toggleBtn.classList.contains("active")) {
+      square.classList.remove("grid-border");
+    } else {
+      square.classList.add("grid-border");
+    }
+      square.style.backgroundColor = ""; // Reset color
     square.style.opacity = "";
   });
 }
