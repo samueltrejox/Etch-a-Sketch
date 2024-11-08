@@ -12,21 +12,13 @@ function setMode(selectedMode) {
 document.querySelector("#retro-btn").addEventListener("click", () => setMode("retro"));
 document.querySelector("#random-btn").addEventListener("click", () => setMode("random"));
 document.querySelector("#clear-btn").addEventListener("click", clearGrid);
-document.querySelector("shadow-btn").addEventListener("click", () => setMode("shadow"));
+document.querySelector("#shadow-btn").addEventListener("click", () => setMode("shadow"));
 
 const container = document.querySelector("#container");
-const buttons = document.querySelectorAll("button");
 const selectedSize = document.querySelector("input[type=range]");
-
-buttons.forEach(button => {
-  let isActive = false;
-
-  button.addEventListener('click', () => {
-    isActive = !isActive;
-    if (button.classList.contains("clear")) return;
-    button.classList.toggle('active', isActive);
-  });
-});
+const randomBtn = document.querySelector("#random-btn");
+const retroBtn = document.querySelector("#retro-btn");
+const shadowBtn = document.querySelector("#shadow-btn");
 
 function createGrid() {
   const gridSizePixel = gridSize[selectedSize.value - 1];
@@ -67,6 +59,7 @@ function clearGrid() {
     square.classList.remove("pixel");
     square.classList.add("grid-border");
     square.style.backgroundColor = ""; // Reset color
+    square.style.opacity = "";
   });
 }
 
@@ -86,27 +79,34 @@ function getRandomHexColor() {
   return `#${randomHex.padStart(6, '0')}`;
 }
 
+function shadowSquare(square) {
+  let opacity = parseFloat(square.style.opacity) || 0;
+  opacity = Math.min(opacity + 0.1, 1);
+  square.style.opacity = opacity.toString();
+}
+
 function colorSquare(event) {
   const square = event.target;
-  if (currentMode === "random") {
-    square.style.backgroundColor = getRandomHexColor();
-    square.classList.remove("grid-border");
-  } else if (currentMode === "retro") {
-    fillSquare(square);
+  switch (currentMode) {
+    case "random":
+      square.style.backgroundColor = getRandomHexColor();
+      square.classList.remove("grid-border");
+      break;
+    case "retro":
+      fillSquare(square);
+      break;
+    case "shadow":
+      shadowSquare(square);
+      break;
+    default:
   }
 }
 
 function activeButton(selectedMode) {
-  if (currentMode === 'random') {
-    document.querySelector("#random-btn").classList.remove('active')
-  } else if (currentMode === 'retro') {
-    document.querySelector("#retro-btn").classList.remove('active')
-
-    if (selectedMode === 'random') {
-      document.querySelector("#random-btn").classList.add('active')
-    } else if (selectedMode === 'retro') {
-      document.querySelector("#retro-btn").classList.add('active')
-  }}}
+  const buttons = [randomBtn, retroBtn, shadowBtn];
+  buttons.forEach(button => button.classList.remove('active'));
+  buttons.find(button => button.id === `${selectedMode}-btn`).classList.add('active');
+}
 
 selectedSize.addEventListener("input", createGrid);
 
