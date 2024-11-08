@@ -19,6 +19,7 @@ const selectedSize = document.querySelector("input[type=range]");
 const randomBtn = document.querySelector("#random-btn");
 const retroBtn = document.querySelector("#retro-btn");
 const shadowBtn = document.querySelector("#shadow-btn");
+const toggleBtn = document.querySelector("#toggle-btn");
 
 function createGrid() {
   const gridSizePixel = gridSize[selectedSize.value - 1];
@@ -65,6 +66,7 @@ function clearGrid() {
 
 function toggleGrid() {
   document.querySelector("#toggle-btn").addEventListener("click", () => {
+    toggleBtn.classList.toggle('active');
     const squares = container.querySelectorAll("div");
     squares.forEach(square => {
       if (!square.classList.contains("pixel")) {
@@ -72,6 +74,7 @@ function toggleGrid() {
       }
     });
   });
+  
 }
 
 function getRandomHexColor() {
